@@ -3,30 +3,19 @@ import Item from './Item'
 import './PlayaList.css'
 import logo from './mojito.ico'
 
-const items = [
-  {
-    name: 'Tongs',
-    picture: '/images/tongs.jpg'
-  },
-  {
-    name: 'Ballon de plage',
-    picture: '/images/ballon.jpg'
-  },
-  {
-    name: 'Raquettes de plage',
-    picture: '/images/raquettes.jpg'
-  },
-  {
-    name: 'Bouée grenouille',
-    picture: '/images/bouee-grenouille.jpg'
-  },
-]
-
 class App extends Component {
-  state = {
-    items: []
+  state={
+    items:[]
   }
 
+  componentDidMount () {
+    fetch('/api/items')
+    .then(res => res.json())
+    .then(items => this.setState({
+      items: items
+    }))
+  }
+  
   handleSubmit = () => {
 
   }
@@ -40,7 +29,7 @@ class App extends Component {
           <h1 className="PlayaList-title">PlayaList</h1>
         </header>
 
-        {/*<div className="PlayaList-list">
+        {/* <div className="PlayaList-list">
           <form>
             <h5>Ajouter un item</h5>
             <div>
@@ -51,14 +40,15 @@ class App extends Component {
               </button>
             </div>
           </form>
-        </div>*/}
+        </div> */}
+        
+          {
+            this.state.items.map(
+              (item) => <Item
+              item={item} />
+            )
+          }
 
-        <div className="PlayaList-list">
-          <Item item={items[0]} />
-          <Item item={items[1]} />
-          <Item item={items[2]} />
-          <Item item={items[3]} />
-        </div>
 
       </div>
     )
