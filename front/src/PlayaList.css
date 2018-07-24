@@ -16,8 +16,22 @@
 }
 
 .PlayaList-list {
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
+}
+
+.PlayaList-list > form > div {
+  display: flex;
+}
+
+.PlayaList-list input {
+  padding: 10px 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.PlayaList-list input:nth-child(2) {
+  flex-grow: 1;
 }
 
 .PlayaList-item {
@@ -25,17 +39,26 @@
   border-bottom: 1px solid #ddd;
 }
 
-.PlayaList-item > * {
-  vertical-align: top;
-}
-
 .PlayaList-item img {
   width: 100px;
 }
 
 .PlayaList-item div {
+  vertical-align: top;
   display: inline-block;
-  padding: 40px 30px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  width: 330px;
+}
+
+.PlayaList-item .icon-cancel-circle {
+  vertical-align: top;
+  margin-top: 40px;
+  display: inline-block;
+  color: #666;
+}
+.PlayaList-item .icon-cancel-circle:hover {
+  color: #e55;
 }
 
 @keyframes PlayaList-logo-spin {

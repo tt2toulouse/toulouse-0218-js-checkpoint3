@@ -58,3 +58,20 @@ Tu dois:
 Tu dois cette fois utiliser les résultats du fetch de l'étape précédente, pour afficher la liste d'items,
 sans avoir besoin de recourir au `const items = [...]` écrit en dur dans `App.js`.
 
+### 4. Créer un item
+
+Tu vas pouvoir décommenter, et rendre actif, le formulaire d'ajout d'un item dans la liste.
+Pour ne pas perdre de temps bêtement à chercher des images sur Google (tu peux garder ça pour la fin !!),
+tu peux coller dans le champ picture [http://via.placeholder.com/100x100](http://via.placeholder.com/100x100).
+
+Ici il va falloir:
+1. câbler une route en POST sur le serveur
+2. utiliser fetch pour poster vers cette route depuis le front
+3. ajouter l'item à la liste
+
+### 5. Bonus: effacer un item
+
+Si tu te sens de le faire, et que tu en as le temps tu peux décommenter la petite croix (ligne avec un `<span>`) dans Item.js, et câbler l'effacement d'un item:
+1. route en DELETE
+2. fetch
+3. enlever l'item de la liste

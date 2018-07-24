@@ -23,6 +23,14 @@ const items = [
 ]
 
 class App extends Component {
+  state = {
+    items: []
+  }
+
+  handleSubmit = () => {
+
+  }
+
   render() {
     return (
       <div className="PlayaList">
@@ -31,6 +39,19 @@ class App extends Component {
           <img src={logo} className="PlayaList-logo" alt="logo" />
           <h1 className="PlayaList-title">PlayaList</h1>
         </header>
+
+        {/*<div className="PlayaList-list">
+          <form>
+            <h5>Ajouter un item</h5>
+            <div>
+              <input name="name" placeholder="Nom" />
+              <input name="picture" placeholder="image" />
+              <button type="submit">
+                <span className="icon-checkmark"></span>
+              </button>
+            </div>
+          </form>
+        </div>*/}
 
         <div className="PlayaList-list">
           <Item item={items[0]} />
