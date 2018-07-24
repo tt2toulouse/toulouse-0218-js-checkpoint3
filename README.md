@@ -10,10 +10,9 @@ ce que tu emmènes avec toi en vacances.
 ## Récupérer le repo Git
 
 Pour commencer, tu dois faire un **fork**, j'insiste, un **FORK** de ce repo,
-et non pas simplement le cloner. Comme ça, tu auras une copie du repo sur ton compte
-GitHub, avec tous les droits dessus, pour pusher, etc.
+et non pas simplement le cloner. Cela se fait via le bouton "fork" en haut à droite de cette page.
 
-Voici donc l'URL du repo: https://github.com/WildCodeSchool/toulouse-0218-js-checkpoint3
+Comme ça, tu auras une copie du repo sur ton compte GitHub, avec tous les droits dessus, pour pusher, etc.
 
 ## Point de départ
 
@@ -28,7 +27,34 @@ pour pouvoir faire des appels avec fetch vers le backend.
 
 ## Installation
 
-* Sous `back`: `npm install` puis `npm start` pour le lancer
-* Même chose dans un autre onglet de terminal, sous `front`: `npm install` puis `npm start`
+* Sous `front`: `npm install` puis `npm start`
+* Même chose dans un autre onglet de terminal, sous `back`: `npm install` puis `npm start` pour le lancer
+* Initialiser la base de données: `mysql -uroot -p < back/database.sql`. Le fichier `database.sql` fait tout d'un coup : initialisation de la base, création d'une table `items`, insertion de quelques éléments...
 
 Remarque: tu peux utiliser `yarn` à la place de `npm` si tu préfères, pour toutes ces commandes...
+
+## Ta Mission
+
+### 1. Afficher la liste d'items plus "proprement"
+
+Côté front, tu as un composant Item, appelé depuis App, auquel on passe **un** élément
+de notre liste. Mais on a écrit 4 fois Item, une fois pour chaque objet du tableau `items`.
+Tu dois faire en sorte de répéter ce composant pour chaque item de la liste, en enlevant ceux écrits "en dur"
+pour les remplacer par une façon plus "propre" de répéter des éléments.
+
+### 2. Récupérer les items depuis le backend
+
+Côté back, dans `back/routes/items.js`, il y a une route en GET qui, pour l'instant, renvoie
+un tableau vide.
+
+Tu dois:
+1. Côté back, faire une requête à la base de données pour obtenir les items, et les renvoyer au client. La db existe déjà si tu l'as bien initialisée lors de la phase d'installation !
+2. Côté front, faire une requête avec fetch vers l'URL correspondante, pour récupérer les items
+
+**Pour valider cette étape, un console.log du résultat retourné par fetch suffira**.
+
+### 3. Utiliser les items récupérés du backend pour afficher la liste
+
+Tu dois cette fois utiliser les résultats du fetch de l'étape précédente, pour afficher la liste d'items,
+sans avoir besoin de recourir au `const items = [...]` écrit en dur dans `App.js`.
+

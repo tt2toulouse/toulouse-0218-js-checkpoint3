@@ -1,6 +1,27 @@
 import React, { Component } from 'react'
+import Item from './Item'
 import './PlayaList.css'
 import logo from './mojito.ico'
+
+const items = [
+  {
+    name: 'Tongs',
+    picture: '/images/tongs.jpg'
+  },
+  {
+    name: 'Ballon de plage',
+    picture: '/images/ballon.jpg'
+  },
+  {
+    name: 'Raquettes de plage',
+    picture: '/images/raquettes.jpg'
+  },
+  {
+    name: 'Bouée grenouille',
+    picture: '/images/bouee-grenouille.jpg'
+  },
+]
+
 class App extends Component {
   render() {
     return (
@@ -12,28 +33,12 @@ class App extends Component {
         </header>
 
         <div className="PlayaList-list">
-
-          <div className="PlayaList-item">
-            <img src="/images/tongs.jpg" alt="Tongs" />
-            <div>Tongs</div>
-          </div>
-
-          <div className="PlayaList-item">
-            <img src="/images/ballon.jpg" alt="Ballon de plage" />
-            <div>Ballon de plage</div>
-          </div>
-
-          <div className="PlayaList-item">
-            <img src="/images/raquettes.jpg" alt="Raquettes de plage" />
-            <div>Raquettes de plage</div>
-          </div>
-
-          <div className="PlayaList-item">
-            <img src="/images/bouee-grenouille.jpg" alt="Bouée grenouille" />
-            <div>Bouée grenouille</div>
-          </div>
-
+          <Item item={items[0]} />
+          <Item item={items[1]} />
+          <Item item={items[2]} />
+          <Item item={items[3]} />
         </div>
+
       </div>
     )
   }
